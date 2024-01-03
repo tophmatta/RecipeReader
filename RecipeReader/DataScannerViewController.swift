@@ -25,6 +25,7 @@ struct TextScanner: UIViewControllerRepresentable {
         
         let scanButton = UIButton(type: .system)
         scanButton.backgroundColor = UIColor.systemBlue
+        scanButton.layer.cornerRadius = 5
         scanButton.setTitle("Start Scan", for: .normal)
         scanButton.setTitleColor(UIColor.white, for: .normal)
         scanButton.addTarget(context.coordinator, action: #selector(Coordinator.startScanning(_:)), for: .touchUpInside)
@@ -34,7 +35,9 @@ struct TextScanner: UIViewControllerRepresentable {
         
         NSLayoutConstraint.activate([
             scanButton.centerXAnchor.constraint(equalTo: scannerViewController.view.centerXAnchor),
-            scanButton.bottomAnchor.constraint(equalTo: scannerViewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+            scanButton.bottomAnchor.constraint(equalTo: scannerViewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            scanButton.heightAnchor.constraint(equalToConstant: 50),
+            scanButton.widthAnchor.constraint(equalToConstant: 100)
         ])
         
         return scannerViewController
