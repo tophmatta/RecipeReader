@@ -11,7 +11,7 @@
 		F1602A282B34A95C00D88140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1602A272B34A95C00D88140 /* ContentView.swift */; };
 		F1602A2C2B34A95D00D88140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1602A2B2B34A95D00D88140 /* Assets.xcassets */; };
 		F1602A2F2B34A95D00D88140 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1602A2E2B34A95D00D88140 /* Preview Assets.xcassets */; };
-		F1C5CF342B444D2D00964C5E /* DataScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5CF332B444D2D00964C5E /* DataScannerViewController.swift */; };
+		F1C5CF342B444D2D00964C5E /* TextScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5CF332B444D2D00964C5E /* TextScanner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		F1602A272B34A95C00D88140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F1602A2B2B34A95D00D88140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1602A2E2B34A95D00D88140 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F1C5CF332B444D2D00964C5E /* DataScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataScannerViewController.swift; sourceTree = "<group>"; };
+		F1C5CF332B444D2D00964C5E /* TextScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScanner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */,
-				F1C5CF332B444D2D00964C5E /* DataScannerViewController.swift */,
+				F1C5CF332B444D2D00964C5E /* TextScanner.swift */,
 				F1602A272B34A95C00D88140 /* ContentView.swift */,
 				F1602A2B2B34A95D00D88140 /* Assets.xcassets */,
 				F1602A2D2B34A95D00D88140 /* Preview Content */,
@@ -142,7 +142,7 @@
 			files = (
 				F1602A282B34A95C00D88140 /* ContentView.swift in Sources */,
 				F1602A262B34A95C00D88140 /* RecipeReaderApp.swift in Sources */,
-				F1C5CF342B444D2D00964C5E /* DataScannerViewController.swift in Sources */,
+				F1C5CF342B444D2D00964C5E /* TextScanner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
