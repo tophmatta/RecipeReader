@@ -12,7 +12,7 @@ import SwiftData
 struct RecipeReaderApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

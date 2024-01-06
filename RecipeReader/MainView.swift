@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 import VisionKit
 
-struct ContentView: View {
+struct MainView: View {
     
     /*
      UX:

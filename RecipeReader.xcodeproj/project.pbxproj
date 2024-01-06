@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F1602A262B34A95C00D88140 /* RecipeReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */; };
-		F1602A282B34A95C00D88140 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1602A272B34A95C00D88140 /* ContentView.swift */; };
+		F1602A282B34A95C00D88140 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1602A272B34A95C00D88140 /* MainView.swift */; };
 		F1602A2C2B34A95D00D88140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1602A2B2B34A95D00D88140 /* Assets.xcassets */; };
 		F1602A2F2B34A95D00D88140 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1602A2E2B34A95D00D88140 /* Preview Assets.xcassets */; };
 		F1C5CF342B444D2D00964C5E /* TextScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C5CF332B444D2D00964C5E /* TextScanner.swift */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		F1602A222B34A95C00D88140 /* RecipeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeReaderApp.swift; sourceTree = "<group>"; };
-		F1602A272B34A95C00D88140 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F1602A272B34A95C00D88140 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F1602A2B2B34A95D00D88140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1602A2E2B34A95D00D88140 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1C5CF332B444D2D00964C5E /* TextScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScanner.swift; sourceTree = "<group>"; };
@@ -55,7 +55,7 @@
 			children = (
 				F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */,
 				F1C5CF332B444D2D00964C5E /* TextScanner.swift */,
-				F1602A272B34A95C00D88140 /* ContentView.swift */,
+				F1602A272B34A95C00D88140 /* MainView.swift */,
 				F1602A2B2B34A95D00D88140 /* Assets.xcassets */,
 				F1602A2D2B34A95D00D88140 /* Preview Content */,
 			);
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1602A282B34A95C00D88140 /* ContentView.swift in Sources */,
+				F1602A282B34A95C00D88140 /* MainView.swift in Sources */,
 				F1602A262B34A95C00D88140 /* RecipeReaderApp.swift in Sources */,
 				F1C5CF342B444D2D00964C5E /* TextScanner.swift in Sources */,
 			);
