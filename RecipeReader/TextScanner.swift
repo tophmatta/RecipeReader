@@ -8,11 +8,13 @@
 import Foundation
 import SwiftUI
 import VisionKit
+import Combine
 
 
 @MainActor
 struct TextScanner: UIViewControllerRepresentable {
-
+    @Binding var image: UIImage?
+    
     var scannerViewController: DataScannerViewController = DataScannerViewController(
         recognizedDataTypes: [.text()],
         qualityLevel: .balanced,
@@ -28,7 +30,7 @@ struct TextScanner: UIViewControllerRepresentable {
         scannerViewController.view.addSubview(scanButton)
         
         let saveButton = createButton(text: "Save Text", background: UIColor.green)
-        scanButton.addTarget(context.coordinator, action: #selector(Coordinator.save(_:)), for: .touchUpInside)
+        saveButton.addTarget(context.coordinator, action: #selector(Coordinator.save(_:)), for: .touchUpInside)
         scannerViewController.view.addSubview(saveButton)
 
         let stackView = createStackView(views: [scanButton, saveButton])
@@ -53,26 +55,31 @@ struct TextScanner: UIViewControllerRepresentable {
             self.parent = parent
         }
         
-        func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
-//            allItems.forEach{ printItem($0) }
+        @objc func startScanning(_ sender: UIButton) {
+            try? parent.scannerViewController.startScanning()
         }
+        
+        @objc func save(_ sender: UIButton) {
+            Task {
+                if let image = await capturePhoto() {
+                    parent.image = image
+                }
+            }
+        }
+        
+        func capturePhoto() async -> UIImage? {
+            try! await parent.scannerViewController.capturePhoto()
+        }
+        
+        func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {}
         
         func dataScanner(_ dataScanner: DataScannerViewController, didRemove removedItems: [RecognizedItem], allItems: [RecognizedItem]) {}
         func dataScanner(_ dataScanner: DataScannerViewController, didUpdate updatedItems: [RecognizedItem], allItems: [RecognizedItem]) {}
         func dataScanner(_ dataScanner: DataScannerViewController, didTapOn item: RecognizedItem) {
             item.printText()
         }
-        
-        @objc func startScanning(_ sender: UIButton) {
-            try? parent.scannerViewController.startScanning()
-        }
-        
-        @objc func save(_ sender: UIButton) {
-//            try? parent.scannerViewController.
-        }
-        
-
     }
+    
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
     
@@ -121,6 +128,3 @@ extension RecognizedItem {
     }
 
 }
-
-
-
