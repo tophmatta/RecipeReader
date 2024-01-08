@@ -14,6 +14,7 @@ import Combine
 @MainActor
 struct TextScanner: UIViewControllerRepresentable {
     @Binding var image: UIImage?
+    @Binding var text: String?
     
     var scannerViewController: DataScannerViewController = DataScannerViewController(
         recognizedDataTypes: [.text()],
@@ -56,19 +57,30 @@ struct TextScanner: UIViewControllerRepresentable {
         }
         
         @objc func startScanning(_ sender: UIButton) {
-            try? parent.scannerViewController.startScanning()
+            do {
+                try parent.scannerViewController.startScanning()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
         
         @objc func save(_ sender: UIButton) {
             Task {
                 if let image = await capturePhoto() {
                     parent.image = image
+                    parent.scannerViewController.stopScanning()
                 }
             }
         }
         
         func capturePhoto() async -> UIImage? {
-            try! await parent.scannerViewController.capturePhoto()
+            var image: UIImage?
+            do {
+                image = try await parent.scannerViewController.capturePhoto()
+            } catch {
+                print(error.localizedDescription)
+            }
+            return image
         }
         
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {}

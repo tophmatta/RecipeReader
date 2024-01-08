@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12FB5EC2B490BC80072DD11 /* CapturedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12FB5EB2B490BC80072DD11 /* CapturedImageView.swift */; };
+		F12FB5EE2B490C080072DD11 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12FB5ED2B490C080072DD11 /* ViewModel.swift */; };
 		F1602A262B34A95C00D88140 /* RecipeReaderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */; };
 		F1602A282B34A95C00D88140 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1602A272B34A95C00D88140 /* MainView.swift */; };
 		F1602A2C2B34A95D00D88140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1602A2B2B34A95D00D88140 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F12FB5EB2B490BC80072DD11 /* CapturedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapturedImageView.swift; sourceTree = "<group>"; };
+		F12FB5ED2B490C080072DD11 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F1602A222B34A95C00D88140 /* RecipeReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeReaderApp.swift; sourceTree = "<group>"; };
 		F1602A272B34A95C00D88140 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -54,8 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				F1602A252B34A95C00D88140 /* RecipeReaderApp.swift */,
-				F1C5CF332B444D2D00964C5E /* TextScanner.swift */,
 				F1602A272B34A95C00D88140 /* MainView.swift */,
+				F12FB5ED2B490C080072DD11 /* ViewModel.swift */,
+				F1C5CF332B444D2D00964C5E /* TextScanner.swift */,
+				F12FB5EB2B490BC80072DD11 /* CapturedImageView.swift */,
 				F1602A2B2B34A95D00D88140 /* Assets.xcassets */,
 				F1602A2D2B34A95D00D88140 /* Preview Content */,
 			);
@@ -140,6 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F12FB5EE2B490C080072DD11 /* ViewModel.swift in Sources */,
+				F12FB5EC2B490BC80072DD11 /* CapturedImageView.swift in Sources */,
 				F1602A282B34A95C00D88140 /* MainView.swift in Sources */,
 				F1602A262B34A95C00D88140 /* RecipeReaderApp.swift in Sources */,
 				F1C5CF342B444D2D00964C5E /* TextScanner.swift in Sources */,

@@ -18,16 +18,19 @@ struct MainView: View {
      3. User taps 'Capture Photo' once it looks correct.
      4. Analyze the photo
      */
-    @State private var image: UIImage?
+    @StateObject var vm = ViewModel()
     
     var body: some View {
-        ZStack {
-            TextScanner(image: $image)
-            if let image = image {
-                Image(uiImage: image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding()
+        NavigationStack(path: $vm.path) {
+            ZStack {
+                TextScanner(image: $vm.image, text: $vm.text)
+                    .navigationDestination(for: Route.self) { nav in
+                        switch nav {
+                        case .image:
+                            CapturedImageView()
+                                .environmentObject(vm)
+                        }
+                    }
             }
         }
     }
