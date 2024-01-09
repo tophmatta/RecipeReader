@@ -13,8 +13,7 @@ import Combine
 
 @MainActor
 struct CameraView: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
-    @Binding var isShown: Bool
+    @EnvironmentObject var vm: ViewModel
         
     func makeUIViewController(context: Context) -> some UIImagePickerController {
         let picker = UIImagePickerController()
@@ -28,28 +27,24 @@ struct CameraView: UIViewControllerRepresentable {
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(isShown: $isShown, image: $image)
+        return Coordinator(vm: _vm)
     }
     
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        @Binding var isShown: Bool
-        @Binding var image: UIImage?
+        @EnvironmentObject var vm: ViewModel
 
-        init(isShown: Binding<Bool>, image: Binding<UIImage?>) {
-            _isShown = isShown
-            _image = image
+        init(vm: EnvironmentObject<ViewModel>) {
+            _vm = vm
         }
+        
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
-            isShown = false
+            vm.image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         }
 
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            isShown = false
+            vm.pop()
         }
     }
     
-    
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {}
-    
 }

@@ -12,21 +12,29 @@ import VisionKit
 struct MainView: View {
     
     @StateObject private var vm = ViewModel()
-    @State private var isShown = false
     
     var body: some View {
         NavigationStack(path: $vm.path) {
             ZStack {
-                
-                CameraView(image: $vm.image, isShown: $isShown)
-                    .navigationDestination(for: Route.self) { nav in
-                        switch nav {
-                        case .image:
-                            CapturedImageView()
-                                .environmentObject(vm)
-                        }
+                Color.white
+                Button {
+                    vm.append(value: Route.camera)
+                } label: {
+                    Text("Button")
+                }
+                .navigationDestination(for: Route.self) { nav in
+                    switch nav {
+                    case .imageResult:
+                        //TODO do something with captured image
+                        CapturedImageView()
+                            .environmentObject(vm)
+                            .ignoresSafeArea()
+                    case .camera:
+                        CameraView()
+                            .environmentObject(vm)
+                            .ignoresSafeArea()
                     }
-                    .ignoresSafeArea()
+                }
             }
         }
     }

@@ -14,7 +14,7 @@ class ViewModel: ObservableObject {
     @Published var image: UIImage? = nil {
         didSet {
             guard image != nil else { return }
-            append(value: Route.image)
+            append(value: Route.imageResult)
         }
     }
     @Published var text: String? = nil
@@ -24,8 +24,12 @@ class ViewModel: ObservableObject {
         path.append(value)
     }
     
+    func pop() {
+        path.removeLast()
+    }
+    
 }
 
 enum Route {
-    case image
+    case imageResult, camera
 }
