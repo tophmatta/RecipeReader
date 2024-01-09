@@ -11,19 +11,14 @@ import VisionKit
 
 struct MainView: View {
     
-    /*
-     UX:
-     1. Start scan
-     2. Shows boxes around area of interest
-     3. User taps 'Capture Photo' once it looks correct.
-     4. Analyze the photo
-     */
-    @StateObject var vm = ViewModel()
+    @StateObject private var vm = ViewModel()
+    @State private var isShown = false
     
     var body: some View {
         NavigationStack(path: $vm.path) {
             ZStack {
-                TextScanner(image: $vm.image, text: $vm.text)
+                
+                CameraView(image: $vm.image, isShown: $isShown)
                     .navigationDestination(for: Route.self) { nav in
                         switch nav {
                         case .image:
@@ -31,6 +26,7 @@ struct MainView: View {
                                 .environmentObject(vm)
                         }
                     }
+                    .ignoresSafeArea()
             }
         }
     }

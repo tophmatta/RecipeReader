@@ -18,18 +18,12 @@ class ViewModel: ObservableObject {
         }
     }
     @Published var text: String? = nil
-    @Published var isImageCaptured = false
     @Published var path = NavigationPath()
 
     func append<T: Hashable>(value: T) {
         path.append(value)
     }
     
-    func reset() {
-        image = nil
-        text = nil
-        isImageCaptured = false
-    }
 }
 
 enum Route {
