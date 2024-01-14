@@ -26,16 +26,15 @@ class ViewModel: ObservableObject {
     }()
     
     init() {
-        eventDrivenImageHandler()
+        subscribe()
     }
     
     deinit {
         bag.removeAll()
     }
     
-    func eventDrivenImageHandler() {
+    func subscribe() {
         $image
-            .receive(on: DispatchQueue.main)
             .sink { [weak self] image in
                 guard let self, let image = image else { return }
                 onImageReceived(image)

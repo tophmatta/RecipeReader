@@ -22,9 +22,9 @@ struct CapturedImageView: View {
                     .padding()
             }
         }
-        .sheet(isPresented: $vm.showTranscript, content: {
+        .sheet(isPresented: $vm.showTranscript) {
             Text(vm.transcript ?? "no text")
-        })
+        }
     }
     
 }
