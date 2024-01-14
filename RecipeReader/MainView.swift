@@ -22,10 +22,14 @@ struct MainView: View {
                 } label: {
                     Text("Button")
                 }
+                .padding()
+                .background(Color.mint)
+                .foregroundStyle(.white)
+                .clipShape(Capsule())
                 .navigationDestination(for: Route.self) { nav in
                     switch nav {
                     case .imageResult:
-                        //TODO do something with captured image
+                        //TODO: do something with captured image
                         CapturedImageView()
                             .environmentObject(vm)
                             .ignoresSafeArea()

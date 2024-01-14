@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-
 struct CapturedImageView: View {
     
     @EnvironmentObject var vm: ViewModel
@@ -16,12 +15,16 @@ struct CapturedImageView: View {
     var body: some View {
         ZStack {
             Color.gray.edgesIgnoringSafeArea(.all)
-            if let img = vm.image {
-                Image(uiImage: img)
+            if let image = vm.image {
+                Image(uiImage: image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .padding()
             }
         }
+        .sheet(isPresented: $vm.showTranscript, content: {
+            Text(vm.transcript ?? "no text")
+        })
     }
+    
 }
